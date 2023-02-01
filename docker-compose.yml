@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  wot-temporary:
+    build: .
+    container_name: wot-temporary
+    restart: always
+    environment:
+      TUNNEL_TTL: 72000
+      TUNNEL_RELAYS: "SCIPARK-01"
+      TUNNEL_DOMAIN: "tuna.meca.in.th."
+      DATABASE_LOGGING: false
+      DATABASE_SYNCHRONIZE: true
+    ports:
+      - 3000:3000
